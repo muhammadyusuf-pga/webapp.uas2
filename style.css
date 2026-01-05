@@ -1,0 +1,425 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eaeaea;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #1a2980;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* User Info Section */
+.user-info {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.user-info h2 {
+    color: #1a2980;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-field input {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.input-field input:focus {
+    border-color: #1a2980;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 41, 128, 0.1);
+}
+
+/* Main Content Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.methods-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Method Cards */
+.method-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.method-header {
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.method-header h2 {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.method-description {
+    padding: 20px 25px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.method-description p {
+    color: #555;
+    font-style: italic;
+}
+
+/* Input & Result Sections */
+.input-section, .result-section {
+    padding: 25px;
+}
+
+.input-section h3, .result-section h3 {
+    color: #1a2980;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.matrix-size-selector {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.matrix-size-selector label {
+    font-weight: 600;
+}
+
+.matrix-size-selector select {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.matrix-input h4 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.matrix-grid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+.matrix-cell {
+    display: flex;
+    align-items: center;
+}
+
+.matrix-cell input {
+    width: 70px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.matrix-cell span {
+    margin: 0 5px;
+    font-weight: 500;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+    padding: 14px 25px;
+    background: linear-gradient(to right, #1a2980, #26d0ce);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #15226d, #20b9b7);
+    box-shadow: 0 5px 15px rgba(26, 41, 128, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Result Display */
+.result-display {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 100px;
+    border-left: 5px solid #26d0ce;
+    font-family: 'Roboto Mono', monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.euler-steps {
+    margin-top: 25px;
+}
+
+.euler-steps h4 {
+    color: #444;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#euler-steps-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+}
+
+/* References Sidebar */
+.references {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    align-self: start;
+    position: sticky;
+    top: 20px;
+}
+
+.references h2 {
+    color: #1a2980;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reference-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.reference-item {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.reference-item h3 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.reference-item p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.info-box, .user-display {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.info-box h3, .user-display h3 {
+    color: #1a2980;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-box p, .user-display p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#user-data {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 20px;
+    border-top: 2px solid #eaeaea;
+    color: #666;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.footer-note {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .references {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .matrix-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .method-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+}

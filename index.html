@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Analisis Numerik</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calculator"></i> Kalkulator Analisis Numerik</h1>
+            <p class="subtitle">Implementasi Metode Gauss Jordan & Metode Euler</p>
+        </header>
+
+        <section class="user-info">
+            <h2><i class="fas fa-user-graduate"></i> Data Mahasiswa</h2>
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="input-field">
+                    <label for="nim"><i class="fas fa-id-card"></i> NIM</label>
+                    <input type="text" id="nim" placeholder="Masukkan NIM">
+                </div>
+                <div class="input-field">
+                    <label for="universitas"><i class="fas fa-university"></i> Universitas</label>
+                    <input type="text" id="universitas" placeholder="Masukkan nama universitas">
+                </div>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <div class="methods-container">
+                <!-- Metode Gauss Jordan -->
+                <section class="method-card" id="gauss-jordan">
+                    <div class="method-header">
+                        <h2><i class="fas fa-th"></i> Metode Gauss Jordan</h2>
+                        <span class="badge">Sistem Persamaan Linear</span>
+                    </div>
+                    <div class="method-description">
+                        <p>Metode untuk menyelesaikan sistem persamaan linear dengan mengubah matriks menjadi bentuk eselon baris tereduksi.</p>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h3><i class="fas fa-sliders-h"></i> Parameter Matriks</h3>
+                        <div class="matrix-size-selector">
+                            <label for="matrix-size">Ukuran Matriks (n x n): </label>
+                            <select id="matrix-size">
+                                <option value="2">2x2</option>
+                                <option value="3" selected>3x3</option>
+                                <option value="4">4x4</option>
+                            </select>
+                        </div>
+                        
+                        <div class="matrix-input">
+                            <h4>Matriks A (Koefisien) dan Vektor b (Konstanta)</h4>
+                            <div id="matrix-container">
+                                <!-- Matrix inputs will be generated here by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <button class="btn calculate-btn" id="calculate-gauss">
+                            <i class="fas fa-calculator"></i> Hitung dengan Gauss Jordan
+                        </button>
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3><i class="fas fa-chart-bar"></i> Hasil Perhitungan</h3>
+                        <div id="gauss-result" class="result-display">
+                            <p>Hasil akan muncul di sini setelah perhitungan.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Metode Euler -->
+                <section class="method-card" id="euler">
+                    <div class="method-header">
+                        <h2><i class="fas fa-chart-line"></i> Metode Euler</h2>
+                        <span class="badge">Persamaan Diferensial</span>
+                    </div>
+                    <div class="method-description">
+                        <p>Metode numerik untuk menyelesaikan persamaan diferensial biasa dengan pendekatan langkah demi langkah.</p>
+                    </div>
+                    
+                    <div class="input-section">
+                        <h3><i class="fas fa-sliders-h"></i> Parameter Persamaan</h3>
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="euler-function">Fungsi dy/dx = f(x, y)</label>
+                                <input type="text" id="euler-function" placeholder="misal: x + y" value="x + y">
+                            </div>
+                            <div class="input-row">
+                                <div class="input-field">
+                                    <label for="x0">Nilai awal x0</label>
+                                    <input type="number" id="x0" step="any" value="0">
+                                </div>
+                                <div class="input-field">
+                                    <label for="y0">Nilai awal y0</label>
+                                    <input type="number" id="y0" step="any" value="1">
+                                </div>
+                                <div class="input-field">
+                                    <label for="h">Step size (h)</label>
+                                    <input type="number" id="h" step="any" value="0.1" min="0.001">
+                                </div>
+                                <div class="input-field">
+                                    <label for="target-x">Nilai x target</label>
+                                    <input type="number" id="target-x" step="any" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn calculate-btn" id="calculate-euler">
+                            <i class="fas fa-calculator"></i> Hitung dengan Metode Euler
+                        </button>
+                    </div>
+                    
+                    <div class="result-section">
+                        <h3><i class="fas fa-chart-bar"></i> Hasil Perhitungan</h3>
+                        <div id="euler-result" class="result-display">
+                            <p>Hasil akan muncul di sini setelah perhitungan.</p>
+                        </div>
+                        <div class="euler-steps">
+                            <h4><i class="fas fa-list-ol"></i> Langkah-langkah Perhitungan</h4>
+                            <div id="euler-steps-container">
+                                <p>Detail langkah akan muncul di sini.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Referensi -->
+            <aside class="references">
+                <h2><i class="fas fa-book"></i> Referensi</h2>
+                <div class="reference-list">
+                    <div class="reference-item">
+                        <h3>Metode Gauss Jordan</h3>
+                        <p>Anton, H., & Rorres, C. (2013). <em>Elementary Linear Algebra</em>. Wiley.</p>
+                    </div>
+                    <div class="reference-item">
+                        <h3>Metode Euler</h3>
+                        <p>Chapra, S. C., & Canale, R. P. (2014). <em>Numerical Methods for Engineers</em>. McGraw-Hill.</p>
+                    </div>
+                    <div class="reference-item">
+                        <h3>Analisis Numerik</h3>
+                        <p>Burden, R. L., & Faires, J. D. (2010). <em>Numerical Analysis</em>. Cengage Learning.</p>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-info-circle"></i> Informasi</h3>
+                    <p>Website ini dibuat untuk memenuhi tugas mata kuliah <strong>Analisis Numerik</strong>.</p>
+                    <p>Semua perhitungan dilakukan secara numerik menggunakan JavaScript.</p>
+                </div>
+                
+                <div class="user-display">
+                    <h3><i class="fas fa-user-tie"></i> Data Anda</h3>
+                    <div id="user-data">
+                        <p>Isi data mahasiswa terlebih dahulu.</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <p>Kalkulator Analisis Numerik &copy; <span id="current-year">2023</span> | Dibuat untuk keperluan akademik</p>
+            <p class="footer-note">Teknologi: HTML, CSS, JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
